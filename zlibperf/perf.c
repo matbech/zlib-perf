@@ -128,9 +128,10 @@ int main (int argc, char ** argv)
 	exit(-1);
     }
 
+    deflateInit(&z, compression_rate);
+
 	ztime(&start);
 
-    deflateInit(&z, compression_rate);
     z.avail_in = 0;
     z.next_out = output_buffer;
     z.avail_out = buffer_size;
