@@ -128,6 +128,10 @@ int main (int argc, char ** argv)
 	exit(-1);
     }
 
+    // for gz header (crc32 instead of adler), MAX_WBITS+16
+    //deflateInit2(&z, compression_rate, Z_DEFLATED, MAX_WBITS + 16, 9/*MAX_MEM_LEVEL*/, Z_DEFAULT_STRATEGY);
+
+    // zlib header
     deflateInit(&z, compression_rate);
 
 	ztime(&start);
@@ -155,12 +159,13 @@ int main (int argc, char ** argv)
 
 	ztime(&stop);
 
-    fprintf(stdout, "Compressing data: raw data %lu, compressed %lu, factor %.2f, compression level (default = -1) %d, buffer size %d, time %ums\n",
+    fprintf(stdout, "Compressing data: raw data %lu, compressed %lu, factor %.2f, compression level (default = -1) %d, buffer size %d, checksum=0x%x, time %ums\n",
 	    z.total_in, z.total_out,
 	    z.total_in == 0 ? 0.0 :
 	    (double)z.total_out / z.total_in,
 	    compression_rate,
 	    buffer_size,
+        z.adler,
 		(uint32_t)((stop - start) / ZTIME_MSEC_PER_SEC));
     deflateEnd(&z);
     //fflush(stdout);
