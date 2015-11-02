@@ -1,7 +1,7 @@
-CPU: Intel Core i7 3770
+CPU: Intel Core i7 3770  
 Compiler: MSVC14
 
-File: silesia\mozilla
+File: silesia\mozilla  
 Size: 51220480 bytes
 
 Compression Level: 6
