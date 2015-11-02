@@ -32,6 +32,8 @@ z_stream z;
 #define ZTIME_USEC_PER_SEC 1000000
 #define ZTIME_MSEC_PER_SEC 1000
 
+#define MEGABYTE (1024*1024)
+
 /* ztime_t represents usec */
 typedef uint64_t ztime_t;
 
@@ -158,15 +160,18 @@ int main (int argc, char ** argv)
     }
 
 	ztime(&stop);
+    uint32_t timeInMs = (uint32_t)((stop - start) / ZTIME_MSEC_PER_SEC);
 
-    fprintf(stdout, "Compressing data: raw data %lu, compressed %lu, factor %.2f, compression level %u, buffer size %u, checksum 0x%x, time %ums\n",
+    fprintf(stdout, "Compressing data: raw data %lu, compressed %lu, factor %.2f, compression level %u, buffer size %u, checksum 0x%x, time %ums, rate %u MB/s\n",
 	    z.total_in, z.total_out,
 	    z.total_in == 0 ? 0.0 :
 	    (double)z.total_out / z.total_in,
 	    compression_level,
 	    buffer_size,
         z.adler,
-		(uint32_t)((stop - start) / ZTIME_MSEC_PER_SEC));
+        timeInMs,
+        (uint32_t)( ((z.total_in / timeInMs) * 1000) / MEGABYTE)
+        );
     deflateEnd(&z);
     //fflush(stdout);
 
