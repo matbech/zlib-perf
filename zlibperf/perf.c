@@ -35,10 +35,10 @@ z_stream z;
 /* ztime_t represents usec */
 typedef uint64_t ztime_t;
 
-char *input_buffer 	= NULL;
-char *output_buffer 	= NULL;
-int  buffer_size 	= DEFAULT_BUFFER_SIZE;
-int  compression_rate	= DEFAULT_COMPRESSION;
+char *input_buffer = NULL;
+char *output_buffer = NULL;
+unsigned int buffer_size = DEFAULT_BUFFER_SIZE;
+unsigned int compression_level = DEFAULT_COMPRESSION;
 
 FILE * fin;
 
@@ -64,7 +64,7 @@ void HelpScreen (const char *progname)
     fprintf(stderr, "Usage: %s file\n", progname ? progname : "zlibperf");
     fprintf(stderr, "Options:\n");
     fprintf(stderr, "\t-b\tBuffer size (default 32K). This has no effect on compression result\n");
-    fprintf(stderr, "\t-c\tCompression rate [1..9] where 1 is compress faster and 9 is compress better (default 6)\n");
+    fprintf(stderr, "\t-c\tCompression level [1..9] where 1 is compress faster and 9 is compress better (default 6)\n");
     fprintf(stderr, "\t-h\tHelp - this help screen\n");
 }
 
@@ -92,10 +92,10 @@ int main (int argc, char ** argv)
 
 	    /* Compression rate */
 	    } else if (!strcmp(argv[arg], "-c")) {
-		compression_rate = (arg+1 < argc && *argv[arg+1] != '-') ?
+		compression_level = (arg+1 < argc && *argv[arg+1] != '-') ?
 		    atoi(argv[++arg]) : DEFAULT_COMPRESSION;
-		compression_rate = MAX(compression_rate, Z_BEST_SPEED);
-		compression_rate = MIN(compression_rate, Z_BEST_COMPRESSION);
+		compression_level = MAX(compression_level, Z_BEST_SPEED);
+		compression_level = MIN(compression_level, Z_BEST_COMPRESSION);
 
 	    /* Print the help screen and exit */
 	    } else if (!strcmp(argv[arg], "-h")) {
@@ -132,7 +132,7 @@ int main (int argc, char ** argv)
     //deflateInit2(&z, compression_rate, Z_DEFLATED, MAX_WBITS + 16, 9/*MAX_MEM_LEVEL*/, Z_DEFAULT_STRATEGY);
 
     // zlib header
-    deflateInit(&z, compression_rate);
+    deflateInit(&z, compression_level);
 
 	ztime(&start);
 
@@ -159,11 +159,11 @@ int main (int argc, char ** argv)
 
 	ztime(&stop);
 
-    fprintf(stdout, "Compressing data: raw data %lu, compressed %lu, factor %.2f, compression level (default = -1) %d, buffer size %d, checksum=0x%x, time %ums\n",
+    fprintf(stdout, "Compressing data: raw data %lu, compressed %lu, factor %.2f, compression level %u, buffer size %u, checksum 0x%x, time %ums\n",
 	    z.total_in, z.total_out,
 	    z.total_in == 0 ? 0.0 :
 	    (double)z.total_out / z.total_in,
-	    compression_rate,
+	    compression_level,
 	    buffer_size,
         z.adler,
 		(uint32_t)((stop - start) / ZTIME_MSEC_PER_SEC));
