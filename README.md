@@ -14,3 +14,8 @@ How to get started
 
 If you just want to run the tests without compiling the .exe, download and install the Visual C++ Redistributable for Visual Studio 2015
 https://www.microsoft.com/en-us/download/details.aspx?id=48145
+
+Results
+-------
+Results:
+[Intel Core i7 3770](Results.md)
