@@ -1,3 +1,5 @@
+https://github.com/madler/zlib
+
 compiler defines:
 UNALIGNED_OK
 ZLIB_CONST
