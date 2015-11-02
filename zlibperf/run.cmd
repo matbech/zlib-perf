@@ -9,6 +9,9 @@ SET data=silesia\mozilla
 REM 6=default level
 SET level=6
 
+echo Data : %data%
+echo Level: %level%
+echo.
 echo 32-bit
 echo ======
 echo zlib-ori
