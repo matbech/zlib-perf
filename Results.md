@@ -1,4 +1,4 @@
-CPU: Intel Core i7 3770  
+CPU: [Intel Core i7 3770](http://ark.intel.com/products/65719/Intel-Core-i7-3770-Processor-8M-Cache-up-to-3_90-GHz)  
 Compiler: MSVC14
 
 File: silesia\mozilla  
