@@ -2,7 +2,7 @@ zlib-perf - zlib performance test (compression only)
 
 Tested with
 -----------
-Microsoft Visual Studio 2015
+Microsoft Visual Studio 2017
 
 Compile zlibperf
 ----------------
@@ -24,4 +24,4 @@ Run the tests
 Results
 -------
 Results:
-[Intel Core i7 3770](Results.md)
+[Intel Core i7 8770](Results.md)
