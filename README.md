@@ -6,7 +6,7 @@ Microsoft Visual Studio 2017
 
 Compile zlibperf
 ----------------
-Precompiled binaries are provided. To use them the Visual C++ Redistributable for Visual Studio 2015 is required:
+Precompiled binaries are provided. To use them the Visual C++ Redistributable for Visual Studio 2017 is required:
 https://www.microsoft.com/en-us/download/details.aspx?id=48145
 
 To compile zlib-perf:

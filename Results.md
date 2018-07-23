@@ -13,7 +13,7 @@ Compression Level: 6
 | zlib-ng        | x86  | 19375674        | 1578      | 30 |
 | matbech/zlib   | x86  | 19077704        | 1234      | 39 |
 | fast_zlib      | x86  | 19067949        | 1516      | 32 |
-
+|                |      |                 |           |    |
 | zlib ori       | x64  | 19089124        | 1734      | 28 |
 | zlib ori - asm | x64  | 19089124        | 1641      | 29 |
 | zlib-ng        | x64  | *               |           |    |
@@ -33,7 +33,7 @@ Compression Level: 6
 | zlib-ng        | x86  | 12584263        | 1125      | 35 |
 | matbech/zlib   | x86  | 12208641        | 1172      | 33 |
 | fast_zlib      | x86  | 12138966        | 1203      | 32 |
-
+|                |      |                 |           |    |
 | zlib ori       | x64  | 12213947        | 1313      | 30 |
 | zlib ori - asm | x64  | 12213947        | 1250      | 31 |
 | zlib-ng        | x64  | *               |           |    |
