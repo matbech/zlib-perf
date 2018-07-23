@@ -5,7 +5,7 @@ REM http://sun.aei.polsl.pl/~sdeor/index.php?page=silesia
 REM The 1913 Webster Unabridged Dictionary	(html)
 SET data=silesia\webster
 REM Tarred executables of Mozilla 1.0 (Tru64 UNIX edition)
-REM SET data=silesia\mozilla
+SET data=silesia\mozilla
 REM 6=default level
 SET level=6
 
