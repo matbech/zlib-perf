@@ -2,79 +2,43 @@
 
 REM silesia corpus
 REM http://sun.aei.polsl.pl/~sdeor/index.php?page=silesia
-REM The 1913 Webster Unabridged Dictionary	(html)
-SET data=silesia\webster
-REM Tarred executables of Mozilla 1.0 (Tru64 UNIX edition)
-SET data=silesia\mozilla
+REM webster: The 1913 Webster Unabridged Dictionary	(html)
+REM mozilla: Tarred executables of Mozilla 1.0 (Tru64 UNIX edition)
+SET dataset="silesia\mozilla" "silesia\webster"
 REM 6=default level
-SET level=6
+SET levels=6
+SET zlibperf=Release\zlibperf.exe
+SET implementations="zlib-ori" "zlib-ori asm" "zlib-ng" "zlib matbech" "zlib dev" "fast_zlib"
+SET platforms=x86 x64
 
-echo Data : %data%
-echo Level: %level%
+(for %%l in (%levels%) do ( 
+echo Level: %%l
 echo.
-echo 32-bit
-echo ======
-echo zlib-ori
-echo --------
-xcopy "..\zlib-ori\x86\zlib1.dll" Release\ /y >NUL
-Release\zlibperf.exe %data% -c %level%
-echo.
-echo zlib-ori asm
-echo ------------
-xcopy "..\zlib-ori asm\x86\zlib1.dll" Release\ /y >NUL
-Release\zlibperf.exe %data% -c %level%
-echo.
-echo zlib-ng
-echo -------
-xcopy ..\zlib-ng\x86\zlib1.dll Release\ /y >NUL
-Release\zlibperf.exe %data% -c %level%
-echo.
-echo matbech/zlib
-echo -------------
-xcopy "..\zlib matbech\x86\zlib1.dll" Release\ /y >NUL
-Release\zlibperf.exe %data% -c %level%
-echo.
-echo zlib dev
-echo --------
-xcopy "..\zlib dev\x86\zlib1.dll" Release\ /y >NUL
-Release\zlibperf.exe %data% -c %level%
-echo.
-echo fast_zlib
-echo --------
-xcopy "..\fast_zlib\x86\zlib1.dll" Release\ /y >NUL
-Release\zlibperf.exe %data% -c %level%
-echo.
-echo 64-bit
-echo ======
-echo zlib-ori
-echo --------
-xcopy "..\zlib-ori\x64\zlib1.dll" x64\Release\ /y >NUL
-x64\Release\zlibperf.exe %data% -c %level%
-echo.
-echo zlib-ori asm
-echo ------------
-xcopy "..\zlib-ori asm\x64\zlib1.dll" x64\Release\ /y >NUL
-x64\Release\zlibperf.exe %data% -c %level%
-echo.
-echo zlib-ng
-echo -------
-xcopy ..\zlib-ng\x64\zlib1.dll x64\Release\ /y >NUL
-x64\Release\zlibperf.exe %data% -c %level%
-echo.
-echo matbech/zlib
-echo -------------
-xcopy "..\zlib matbech\x64\zlib1.dll" x64\Release\ /y >NUL
-x64\Release\zlibperf.exe %data% -c %level%
-echo.
-echo zlib dev
-echo --------
-xcopy "..\zlib dev\x64\zlib1.dll" x64\Release\ /y >NUL
-x64\Release\zlibperf.exe %data% -c %level%
-echo.
-echo fast_zlib
-echo --------
-xcopy "..\fast_zlib\x64\zlib1.dll" x64\Release\ /y >NUL
-x64\Release\zlibperf.exe %data% -c %level%
 
+(for %%d in (%dataset%) do ( 
+echo Data : %%~d
+echo.
+
+(for %%p in (%platforms%) do (
+   echo Platform: %%p
+   echo =============
+   
+   (for %%i in (%implementations%) do (
+		echo %%~i
+		del Release\zlib1.dll 2>NUL
+		
+		if exist "..\%%~i\%%p\zlib1.dll" (
+			xcopy "..\%%~i\%%p\zlib1.dll" Release\ /y >NUL
+			%zlibperf% %%d -c %level%
+		) else (
+			echo skipping. zlib1.dll does not exist.
+		)
+		
+		echo.   
+   )) 
+
+))
+))
+))
 
 pause
