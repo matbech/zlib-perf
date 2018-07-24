@@ -9,13 +9,13 @@ Compression Level: 6
 |                | Arch | Compressed size | Time (ms) | Compression rate (MB/s) |
 | -------------- | -----| ---------------:| ---------:| -----------------------:|
 | zlib ori       | x86  | 19089124        | 1813      | 26 |
-| zlib ori - asm | x86  | 19089124        | 1703      | 28 |
+| zlib ori - asm | x86  | 19089124        | 1562      | 31 |
 | zlib-ng        | x86  | 19375674        | 1578      | 30 |
 | matbech/zlib   | x86  | 19077704        | 1234      | 39 |
 | fast_zlib      | x86  | 19067949        | 1516      | 32 |
 |                |      |                 |           |    |
-| zlib ori       | x64  | 19089124        | 1734      | 28 |
-| zlib ori - asm | x64  | 19089124        | 1641      | 29 |
+| zlib ori       | x64  | 19089124        | 1718      | 28 |
+| zlib ori - asm | x64  | 19089124        | 1484      | 32 |
 | zlib-ng        | x64  | *               |           |    |
 | matbech/zlib   | x64  | 19077704        | 1110      | 44 |
 | fast_zlib      | x64  | 19067949        | 1437      | 33 |
