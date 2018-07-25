@@ -22,7 +22,7 @@
     <ProjectGuid>{43E6EE24-ED14-4487-B2A3-17650124382B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>zlibperf</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.10240.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -74,15 +74,15 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>C:\My Projects\Common\zlib\lib\x64;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Projects\Common\zlib\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <LibraryPath>C:\My Projects\Common\zlib\lib\Win32;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Projects\Common\zlib\lib\Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <LibraryPath>C:\My Projects\Common\zlib\lib\x64;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Projects\Common\zlib\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
