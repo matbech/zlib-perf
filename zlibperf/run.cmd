@@ -46,7 +46,7 @@ echo.
 		
 		if exist "..\implementations\!folder%%i!\%%p\zlib1.dll" (
 			xcopy "..\implementations\!folder%%i!\%%p\zlib1.dll" "!outputfolder!\" /y >NUL
-			"!outputfolder!\%zlibperf%" %%d -c %level%
+			"!outputfolder!\%zlibperf%" %%d -c %%l
 		) else (
 			echo skipping. zlib1.dll does not exist.
 		)
