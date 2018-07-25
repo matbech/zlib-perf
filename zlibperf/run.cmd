@@ -1,4 +1,5 @@
 @echo off
+setlocal enableDelayedExpansion
 
 REM silesia corpus
 REM http://sun.aei.polsl.pl/~sdeor/index.php?page=silesia
@@ -8,8 +9,18 @@ SET dataset="silesia\mozilla" "silesia\webster"
 REM 6=default level
 SET levels=6
 SET zlibperf=Release\zlibperf.exe
-SET implementations="zlib-ori" "zlib-ori asm" "zlib-ng" "zlib matbech" "zlib dev" "fast_zlib"
 SET platforms=x86 x64
+SET implementationfolder=..\implementations
+
+for /F "skip=1 delims=" %%a in ('wmic cpu get name') do for /f "delims=" %%b in ("%%a") do echo CPU: %%b
+
+::build "array" of implementations
+set folderCount=0
+for /f "eol=: delims=" %%F in ('dir /b /ad %implementationfolder%') do (
+  set /a folderCount+=1
+  set "folder!folderCount!=%%F"
+)
+
 
 (for %%l in (%levels%) do ( 
 echo Level: %%l
@@ -23,12 +34,12 @@ echo.
    echo Platform: %%p
    echo =============
    
-   (for %%i in (%implementations%) do (
-		echo %%~i
+   (for /l %%i in (1 1 %folderCount%) do (
+		echo !folder%%i!
 		del Release\zlib1.dll 2>NUL
 		
-		if exist "..\%%~i\%%p\zlib1.dll" (
-			xcopy "..\%%~i\%%p\zlib1.dll" Release\ /y >NUL
+		if exist "..\implementations\!folder%%i!\%%p\zlib1.dll" (
+			xcopy "..\implementations\!folder%%i!\%%p\zlib1.dll" Release\ /y >NUL
 			%zlibperf% %%d -c %level%
 		) else (
 			echo skipping. zlib1.dll does not exist.
