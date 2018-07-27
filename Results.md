@@ -17,7 +17,7 @@ Compression Level: 6
 |                  |      |                 |           |    |
 | zlib ori         | x64  | 19089124        | 1718      | 28 |
 | zlib ori - asm (1)  | x64  | 19089124        | 1484      | 32 |
-| zlib-ng          | x64  | (1)             |           |    |
+| zlib-ng          | x64  | (2)             |           |    |
 | matbech/zlib     | x64  | 19077704        | 1110      | 44 |
 | fast_zlib        | x64  | 19067949        | 1437      | 33 |
 | fast_zlib/master | x64  | 19068259        | 1172      | 41 |
@@ -45,5 +45,5 @@ Compression Level: 6
 | fast_zlib/master | x64  | 12140235        | 938      | 42 |
 
 
-(1) ASM implementation is broken (buffer overflow)
+(1) ASM implementation is broken (buffer overflow)  
 (2) broken. bug in deflate
