@@ -18,9 +18,9 @@ Compression Level: 6
 |                  |      |                 |           |    |
 | zlib ori         | x64  | 19089124        | 1718      | 28 |
 | zlib ori - asm (1)  | x64  | 19089124        | 1484      | 32 |
-| zlib-ng          | x64  | (2)             |           |    |
+| zlib-ng (2)         | x64  |              |           |    |
 | matbech/zlib     | x64  | 19077704        | 1110      | 44 |
-| fast_zlib releas 2 | x64  | 19067949        | 1437      | 33 |
+| fast_zlib release 2 | x64  | 19067949        | 1437      | 33 |
 | fast_zlib/master | x64  | 19068104        | 1250      | 39 |
 | fast_zlib/master opt | x64  | 19068104        | 1172      | 41 |
 
@@ -42,7 +42,7 @@ Compression Level: 6
 |                |      |                 |           |    |
 | zlib ori       | x64  | 12213947        | 1313      | 30 |
 | zlib ori - asm (1) | x64  | 12213947        | 1250      | 31 |
-| zlib-ng        | x64  | (2)               |           |    |
+| zlib-ng (2)       | x64  |                |           |    |
 | matbech/zlib   | x64  | 12208641        | 1062      | 37 |
 | fast_zlib release 2 | x64  | 12138966        | 1141      | 34 |
 | fast_zlib/master | x64  | 12138950        | 984      | 40 |
