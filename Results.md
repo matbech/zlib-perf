@@ -13,7 +13,7 @@ Compression Level: 6
 | zlib-ng          | x86  | 19375674        | 1578      | 30 |
 | matbech/zlib     | x86  | 19077704        | 1234      | 39 |
 | fast_zlib release 2 | x86  | 19067949        | 1516      | 32 |
-| fast_zlib/master | x86  | 19068104        | 1313      | 34 |
+| fast_zlib/master | x86  | 19068104        | 1406      | 34 |
 | fast_zlib/master opt | x86  | 19068104        | 1328      | 36 |
 |                  |      |                 |           |    |
 | zlib ori         | x64  | 19089124        | 1718      | 28 |
@@ -21,7 +21,7 @@ Compression Level: 6
 | zlib-ng (2)         | x64  |              |           |    |
 | matbech/zlib     | x64  | 19077704        | 1110      | 44 |
 | fast_zlib release 2 | x64  | 19067949        | 1437      | 33 |
-| fast_zlib/master | x64  | 19068104        | 1250      | 39 |
+| fast_zlib/master | x64  | 19068104        | 1281      | 38 |
 | fast_zlib/master opt | x64  | 19068104        | 1172      | 41 |
 
 
@@ -37,7 +37,7 @@ Compression Level: 6
 | zlib-ng        | x86  | 12584263        | 1125      | 35 |
 | matbech/zlib   | x86  | 12208641        | 1172      | 33 |
 | fast_zlib release 2 | x86  | 12138966        | 1203      | 32 |
-| fast_zlib/master | x86  | 12138950        | 1109      | 35 |
+| fast_zlib/master | x86  | 12138950        | 1140      | 34 |
 | fast_zlib/master opt | x86  | 12138950        | 1057      | 37 |
 |                |      |                 |           |    |
 | zlib ori       | x64  | 12213947        | 1313      | 30 |
@@ -45,7 +45,7 @@ Compression Level: 6
 | zlib-ng (2)       | x64  |                |           |    |
 | matbech/zlib   | x64  | 12208641        | 1062      | 37 |
 | fast_zlib release 2 | x64  | 12138966        | 1141      | 34 |
-| fast_zlib/master | x64  | 12138950        | 984      | 40 |
+| fast_zlib/master | x64  | 12138950        | 1016      | 38 |
 | fast_zlib/master opt | x64  | 12138950        | 938      | 42 |
 
 (1) ASM implementation is broken (buffer overflow)  
