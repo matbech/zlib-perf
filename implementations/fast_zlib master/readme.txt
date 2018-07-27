@@ -4,3 +4,4 @@ using Sources\match.h
 
 with the following additional optimizations:
 - adler32
+- fill_window_sse
