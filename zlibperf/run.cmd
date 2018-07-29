@@ -9,6 +9,9 @@ SET dataset="silesia\mozilla" "silesia\webster"
 REM 6=default level
 SET levels=6
 SET zlibperf=zlibperf.exe
+REM -v = verify output
+SET zlibperfoptions=-v
+REM SET zlibperfoptions=
 SET platforms=x86 x64
 SET implementationfolder=..\implementations
 
@@ -46,7 +49,7 @@ echo.
 		
 		if exist "..\implementations\!folder%%i!\%%p\zlib1.dll" (
 			xcopy "..\implementations\!folder%%i!\%%p\zlib1.dll" "!outputfolder!\" /y >NUL
-			"!outputfolder!\%zlibperf%" %%d -c %%l
+			"!outputfolder!\%zlibperf%" %%d -c %%l %zlibperfoptions%
 		) else (
 			echo skipping. zlib1.dll does not exist.
 		)
