@@ -2,13 +2,13 @@ zlib-perf - zlib performance test (compression only)
 
 Tested with
 -----------
-Microsoft Visual Studio 2017
+Microsoft Visual Studio 2019
 
 Compile zlibperf
 ----------------
 Precompiled binaries are provided. To use them, the Visual C++ Redistributable for Visual Studio 2017 is required:  
-[Visual C++ Redistributable - x64](https://aka.ms/vs/15/release/VC_redist.x64.exe)  
-[Visual C++ Redistributable - x86](https://aka.ms/vs/15/release/VC_redist.x86.exe)
+[Visual C++ Redistributable - x64](https://aka.ms/vs/16/release/VC_redist.x64.exe)  
+[Visual C++ Redistributable - x86](https://aka.ms/vs/16/release/VC_redist.x86.exe)
 
 To compile zlib-perf:
 - Open zlibperf/zlibperf.sln
