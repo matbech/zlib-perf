@@ -227,7 +227,7 @@ uint32_t inflateTest(FILE * fin, unsigned int buffer_size)
 		);
 	}
 	else {
-		fprintf(stdout, "Decmpressing data: raw data %lu, decompressed %lu, factor %.2f, checksum 0x%x, time %ums, rate %u MB/s\n",
+		fprintf(stdout, "Decompressing data: raw data %lu, decompressed %lu, factor %.2f, checksum 0x%x, time %ums, rate %u MB/s\n",
 			z.total_in, z.total_out,
 			z.total_in == 0 ? 0.0 :
 			(double)z.total_out / z.total_in,
