@@ -72,18 +72,22 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <LibraryPath>C:\Projects\Common\zlib\lib\Win32;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Projects\Libraries\zlib\zlib;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <LibraryPath>C:\Projects\Common\zlib\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Projects\Libraries\zlib\zlib;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <LibraryPath>C:\Projects\Common\zlib\lib\Win32;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Projects\Libraries\zlib\zlib\win32\Release;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Projects\Libraries\zlib\zlib;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <LibraryPath>C:\Projects\Common\zlib\lib\x64;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Projects\Libraries\zlib\zlib\x64\Release;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Projects\Libraries\zlib\zlib;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

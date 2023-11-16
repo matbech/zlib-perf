@@ -12,7 +12,7 @@ SET zlibperf=zlibperf.exe
 REM -v = verify output
 SET zlibperfoptions=-v
 REM SET zlibperfoptions=
-SET platforms=x86 x64
+SET platforms=x64 x86
 SET implementationfolder=..\implementations
 
 for /F "skip=1 delims=" %%a in ('wmic cpu get name') do for /f "delims=" %%b in ("%%a") do echo CPU: %%b
