@@ -2,10 +2,9 @@
 setlocal enableDelayedExpansion
 
 REM silesia corpus
-REM http://sun.aei.polsl.pl/~sdeor/index.php?page=silesia
-REM webster: The 1913 Webster Unabridged Dictionary	(html)
-REM mozilla: Tarred executables of Mozilla 1.0 (Tru64 UNIX edition)
-SET dataset="silesia\mozilla" "silesia\webster"
+REM https://sun.aei.polsl.pl/~sdeor/index.php?page=silesia
+REM tar -cvf silesa.tar silesa/*
+SET dataset="silesa.tar"
 REM 6=default level
 SET levels=6
 SET zlibperf=zlibperf.exe
